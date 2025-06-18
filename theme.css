@@ -1,4 +1,4 @@
-/* Working Vencord theme - transparency + visible outlines */
+/* Working Vencord theme - transparency + minimal outlines */
 :root,
 .theme-dark,
 .theme-light {
@@ -61,7 +61,7 @@
   --header-secondary: rgb(220, 220, 220);
 
   --chat-background: rgba(20, 20, 20, 0.5);
-  --chat-border: rgb(var(--rgb-highlight));
+  --chat-border: transparent;
   --chat-input-container-background: rgba(25, 25, 25, 0.8);
   --channeltextarea-background: rgba(25, 25, 25, 0.8);
 
@@ -205,28 +205,28 @@
   --brand-experiment-90a: rgba(var(--rgb-highlight), 0.9);
   --brand-experiment-95a: rgba(var(--rgb-highlight), 0.95);
   --primary-630: rgba(var(--rgb-background), 0.6);
-  --border-faint: rgb(var(--rgb-highlight));
-  --border-subtle: rgb(var(--rgb-highlight));
-  --app-border-frame: rgb(var(--rgb-highlight));
+  --border-faint: transparent;
+  --border-subtle: transparent;
+  --app-border-frame: transparent;
 }
 
-/* Force borders on specific elements */
+/* Remove all general borders */
 [class*="sidebar"], [class*="panel"], [class*="container"] {
-  border: 1px solid rgba(var(--rgb-highlight), 0.6) !important;
+  border: none !important;
 }
 
-/* Activity cards and game detection */
+/* Remove activity card borders */
 [class*="activityPanel"], [class*="gameWrapper"], [class*="game"] {
-  border: 1px solid rgba(var(--rgb-highlight), 0.8) !important;
+  border: none !important;
   background: rgba(20, 20, 20, 0.8) !important;
 }
 
-/* Server/channel list borders */
+/* Remove server/channel list borders */
 [class*="guilds"], [class*="channels"] {
-  border-right: 2px solid rgba(var(--rgb-highlight), 0.6) !important;
+  border-right: none !important;
 }
 
-/* Divider line between servers and DMs */
+/* Keep ONLY the divider line between servers and DMs */
 [class*="listItem"]:has([data-list-item-id="guildsnav___home"]) + [class*="listItem"],
 [class*="tutorialContainer"] + [class*="listItem"],
 [class*="guildSeparator"],
@@ -236,7 +236,7 @@
   padding-top: 8px !important;
 }
 
-/* Ping/mention styling with coral highlight */
+/* Ping/mention styling with coral highlight (no borders) */
 [class*="mentioned"] {
   background-color: rgba(var(--rgb-highlight), 0.1) !important;
   border-left: 4px solid rgb(var(--rgb-highlight)) !important;
@@ -250,8 +250,4 @@
 [class*="wrapper"][class*="mention"] {
   background-color: rgba(var(--rgb-highlight), 0.3) !important;
   color: rgb(255, 255, 255) !important;
-}
-
-[class*="wrapper"][class*="mention"]:hover {
-  background-color: rgba(var(--rgb-highlight), 0.5) !important;
 }
