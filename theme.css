@@ -1,49 +1,232 @@
-/* -- MAIN VENCORD THEME (TRANSPARENT + MINIMAL OUTLINES) -- */
+/* Working Vencord theme - transparency + visible outlines */
+:root,
+.theme-dark,
+.theme-light {
+  --rgb-highlight: 255, 122, 122;
+  --rgb-background: 0, 0, 0;
+  --rgb-text: 255, 255, 255;
+  --rgb-close-button: 50, 50, 50;
+  --rgb-online-color: 57, 255, 20;
+  --rgb-afk-color: 255, 255, 51;
+  --rgb-dnd-color: 122, 122, 255;
+  --rgb-streaming-color: 188, 19, 254;
 
-/* ...[your original variables remain unchanged above]... */
+  --highlight: rgb(var(--rgb-highlight));
+  --background: rgba(15, 15, 15, 0.7);
+  --text: rgb(var(--rgb-text));
+  --close-button: rgb(var(--rgb-close-button));
+  --online-color: rgb(var(--rgb-online-color));
+  --afk-color: rgb(var(--rgb-afk-color));
+  --dnd-color: rgb(var(--rgb-dnd-color));
+  --streaming-color: rgb(var(--rgb-streaming-color));
+  --member-list-background: rgba(30, 30, 30, 0.8);
 
-/* Remove excessive borders/outlines */
-[class*="sidebar"],
-[class*="panel"],
-[class*="container"],
-[class*="scroller"],
-[class*="contentRegion"],
-[class*="chatContent"],
-[class*="chat-"],
-[class*="container-"][class*="channel-"],
-[class*="messagesWrapper-"],
-[class*="toolbar-"],
-[class*="container-"][class*="membersWrap"],
-[class*="header-"],
-[class*="form-"],
-[class*="membersGroup-"],
-[class*="divider-"] {
-  border: none !important;
-  outline: none !important;
-  box-shadow: none !important;
+  --scrollbar-thin-thumb: var(--highlight);
+  --scrollbar-auto-thumb: var(--highlight);
+  --scrollbar-auto-scrollbar-color-thumb: var(--highlight);
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-track: transparent;
+  --scrollbar-auto-scrollbar-color-track: transparent;
+
+  --transition-time: 0.3s;
+  --background-image: unset;
+  --background-position: center;
+  --background-size: cover;
+  --background-blur: 0px;
+  --background-brightness: 100%;
+
+  --background-primary: rgba(20, 20, 20, 0.6);
+  --background-mobile-primary: rgba(20, 20, 20, 0.6);
+  --background-secondary: rgba(15, 15, 15, 0.4);
+  --background-mobile-secondary: rgba(15, 15, 15, 0.4);
+  --background-secondary-alt: rgba(10, 10, 10, 0.5);
+  --background-tertiary: rgba(5, 5, 5, 0.6);
+  --background-accent: rgba(25, 25, 25, 0.7);
+  --background-floating: rgba(20, 20, 20, 0.8);
+  --background-nested-floating: rgba(15, 15, 15, 0.8);
+  --background-base-lowest: rgba(0, 0, 0, 0.3);
+  --background-base-low: rgba(5, 5, 5, 0.4);
+  --background-surface-high: rgba(30, 30, 30, 0.7);
+  --modal-background: rgba(25, 25, 25, 0.9);
+  --modal-footer-background: rgba(20, 20, 20, 0.8);
+  --bg-surface-overlay: rgba(35, 35, 35, 0.8);
+  --activity-card-background: rgba(25, 25, 25, 0.7);
+
+  --background-modifier-accent: rgba(var(--rgb-highlight), 0.2);
+  --background-modifier-hover: rgba(255, 122, 122, 0.1);  
+  --background-modifier-active: rgba(var(--rgb-highlight), 0.3);
+  --background-modifier-selected: rgba(255, 122, 122, 0.4);
+
+  --header-primary: rgb(255, 255, 255);
+  --header-secondary: rgb(220, 220, 220);
+
+  --chat-background: rgba(20, 20, 20, 0.5);
+  --chat-border: rgb(var(--rgb-highlight));
+  --chat-input-container-background: rgba(25, 25, 25, 0.8);
+  --channeltextarea-background: rgba(25, 25, 25, 0.8);
+
+  --spoiler-hidden-background: var(--highlight);
+  --spoiler-revealed-background: rgba(var(--rgb-highlight), 0.2);
+
+  --input-background: rgba(25, 25, 25, 0.8);
+  --textbox-markdown-syntax: var(--text-link);
+  --logo-primary: var(--highlight);
+
+  --background-mentioned: rgba(250, 166, 26, 0.1);
+  --background-mentioned-hover: rgba(250, 166, 26, 0.2);
+  --background-message-hover: rgba(255, 122, 122, 0.08);
+  --background-message-highlight: rgba(var(--rgb-highlight), 0.15);
+  --background-message-highlight-hover: rgba(255, 122, 122, 0.25);
+  --background-message-automod: rgba(var(--rgb-highlight), 0.1);
+  --background-message-automod-hover: rgba(var(--rgb-highlight), 0.2);
+
+  --text-link: rgb(100, 150, 255);
+  --text-link-low-saturation: rgba(var(--rgb-highlight), 0.7);
+  --text-positive: var(--online-color);
+  --text-warning: var(--afk-color);
+  --text-danger: var(--dnd-color);
+  --text-brand: rgb(255, 255, 255);
+  --text-normal: var(--text);
+  --text-muted: rgb(180, 180, 180);
+
+  --button-danger-background-disabled: rgba(var(--rgb-close-button), 0.3);
+  --button-danger-background: rgba(var(--rgb-close-button), 0.8);
+  --button-danger-background-hover: rgba(var(--rgb-close-button), 1);
+  --button-danger-background-active: rgba(var(--rgb-close-button), 1);
+  --button-outline-danger-border: rgba(var(--rgb-close-button), 0.8);
+  --button-outline-danger-background: rgba(var(--rgb-close-button), 0.1);
+  --button-outline-danger-background-hover: rgba(var(--rgb-close-button), 0.2);
+  --button-outline-danger-background-active: rgba(var(--rgb-close-button), 0.3);
+  --button-outline-danger-text: rgba(var(--rgb-close-button), 1);
+  --button-outline-danger-text-hover: rgba(var(--rgb-close-button), 1);
+  --button-outline-danger-text-active: rgba(var(--rgb-close-button), 1);
+  --button-outline-danger-border-hover: rgba(var(--rgb-close-button), 1);
+  --button-outline-danger-border-active: rgba(var(--rgb-close-button), 1);
+
+  --button-positive-background-disabled: rgba(var(--rgb-online-color), 0.3);
+  --button-positive-background: rgba(var(--rgb-online-color), 0.8);
+  --button-positive-background-hover: rgba(var(--rgb-online-color), 1);
+  --button-positive-background-active: rgba(var(--rgb-online-color), 1);
+  --button-outline-positive-border: rgba(var(--rgb-online-color), 0.8);
+  --button-outline-positive-background: rgba(var(--rgb-online-color), 0.1);
+  --button-outline-positive-background-hover: rgba(var(--rgb-online-color), 0.2);
+  --button-outline-positive-background-active: rgba(var(--rgb-online-color), 0.3);
+  --button-outline-positive-text: rgba(var(--rgb-online-color), 1);
+  --button-outline-positive-text-hover: rgba(var(--rgb-online-color), 1);
+  --button-outline-positive-text-active: rgba(var(--rgb-online-color), 1);
+  --button-outline-positive-border-hover: rgba(var(--rgb-online-color), 1);
+  --button-outline-positive-border-active: rgba(var(--rgb-online-color), 1);
+
+  --button-primary-background-disabled: rgba(var(--rgb-highlight), 0.3);
+  --button-primary-background: rgba(var(--rgb-highlight), 0.8);
+  --button-primary-background-hover: rgba(var(--rgb-highlight), 1);
+  --button-primary-background-active: rgba(var(--rgb-highlight), 1);
+  --button-outline-primary-border: rgba(var(--rgb-highlight), 0.8);
+  --button-outline-primary-background: rgba(var(--rgb-highlight), 0.1);
+  --button-outline-primary-background-hover: rgba(var(--rgb-highlight), 0.2);
+  --button-outline-primary-background-active: rgba(var(--rgb-highlight), 0.3);
+  --button-outline-primary-text: rgba(var(--rgb-highlight), 1);
+  --button-outline-primary-text-hover: rgba(var(--rgb-highlight), 1);
+  --button-outline-primary-text-active: rgba(var(--rgb-highlight), 1);
+  --button-outline-primary-border-hover: rgba(var(--rgb-highlight), 1);
+  --button-outline-primary-border-active: rgba(var(--rgb-highlight), 1);
+
+  --button-brand-background-disabled: rgba(var(--rgb-highlight), 0.3);
+  --button-brand-background: rgba(var(--rgb-highlight), 0.8);
+  --button-brand-background-hover: rgba(var(--rgb-highlight), 1);
+  --button-brand-background-active: rgba(var(--rgb-highlight), 1);
+
+  --button-filled-brand-background: rgba(var(--rgb-highlight), 0.8);
+  --button-filled-brand-background-hover: rgba(var(--rgb-highlight), 1);
+  --button-filled-brand-background-active: rgba(var(--rgb-highlight), 1);
+  --button-filled-brand-background-border: rgba(var(--rgb-highlight), 1);
+
+  --search-popout-option-user-nickname: var(--highlight);
+  --search-popout-option-user-username: rgba(var(--rgb-highlight), 0.7);
+  --search-popout-option-filter-text: rgba(var(--rgb-highlight), 0.7);
+  --search-popout-date-picker-border: 2px solid var(--highlight);
+
+  --interactive-muted: rgba(120, 120, 120, 0.8);
+  --interactive-normal: rgba(200, 200, 200, 0.9);
+  --interactive-hover: rgba(255, 122, 122, 0.8);
+  --interactive-active: rgba(255, 255, 255, 1);
+
+  --status-danger: var(--dnd-color);
+  --status-warning: var(--afk-color);
+  --status-positive: var(--online-color);
+
+  --bg-brand: var(--highlight);
+
+  --brand-experiment: var(--highlight);
+  --brand-experiment-100: rgba(var(--rgb-highlight), 0.1);
+  --brand-experiment-130: rgba(var(--rgb-highlight), 0.13);
+  --brand-experiment-160: rgba(var(--rgb-highlight), 0.16);
+  --brand-experiment-200: rgba(var(--rgb-highlight), 0.2);
+  --brand-experiment-230: rgba(var(--rgb-highlight), 0.23);
+  --brand-experiment-260: rgba(var(--rgb-highlight), 0.26);
+  --brand-experiment-300: rgba(var(--rgb-highlight), 0.3);
+  --brand-experiment-330: rgba(var(--rgb-highlight), 0.33);
+  --brand-experiment-360: rgba(var(--rgb-highlight), 0.36);
+  --brand-experiment-400: rgba(var(--rgb-highlight), 0.4);
+  --brand-experiment-430: rgba(var(--rgb-highlight), 0.43);
+  --brand-experiment-460: rgba(var(--rgb-highlight), 0.46);
+  --brand-experiment-500: var(--highlight);
+  --brand-experiment-530: var(--highlight);
+  --brand-experiment-560: var(--highlight);
+  --brand-experiment-600: var(--highlight);
+  --brand-experiment-630: var(--highlight);
+  --brand-experiment-660: var(--highlight);
+  --brand-experiment-700: var(--highlight);
+  --brand-experiment-730: var(--highlight);
+  --brand-experiment-760: var(--highlight);
+  --brand-experiment-800: var(--highlight);
+  --brand-experiment-830: var(--highlight);
+  --brand-experiment-860: var(--highlight);
+  --brand-experiment-900: var(--highlight);
+  --brand-experiment-930: var(--highlight);
+  --brand-experiment-960: var(--highlight);
+  --brand-experiment-05a: rgba(var(--rgb-highlight), 0.05);
+  --brand-experiment-10a: rgba(var(--rgb-highlight), 0.1);
+  --brand-experiment-15a: rgba(var(--rgb-highlight), 0.15);
+  --brand-experiment-20a: rgba(var(--rgb-highlight), 0.2);
+  --brand-experiment-25a: rgba(var(--rgb-highlight), 0.25);
+  --brand-experiment-30a: rgba(var(--rgb-highlight), 0.3);
+  --brand-experiment-35a: rgba(var(--rgb-highlight), 0.35);
+  --brand-experiment-40a: rgba(var(--rgb-highlight), 0.4);
+  --brand-experiment-45a: rgba(var(--rgb-highlight), 0.45);
+  --brand-experiment-50a: rgba(var(--rgb-highlight), 0.5);
+  --brand-experiment-55a: rgba(var(--rgb-highlight), 0.55);
+  --brand-experiment-60a: rgba(var(--rgb-highlight), 0.6);
+  --brand-experiment-65a: rgba(var(--rgb-highlight), 0.65);
+  --brand-experiment-70a: rgba(var(--rgb-highlight), 0.7);
+  --brand-experiment-75a: rgba(var(--rgb-highlight), 0.75);
+  --brand-experiment-80a: rgba(var(--rgb-highlight), 0.8);
+  --brand-experiment-85a: rgba(var(--rgb-highlight), 0.85);
+  --brand-experiment-90a: rgba(var(--rgb-highlight), 0.9);
+  --brand-experiment-95a: rgba(var(--rgb-highlight), 0.95);
+  --primary-630: rgba(var(--rgb-background), 0.6);
+  --border-faint: rgb(var(--rgb-highlight));
+  --border-subtle: rgb(var(--rgb-highlight));
+  --app-border-frame: rgb(var(--rgb-highlight));
 }
 
-/* Optional: soften or keep outlines only where truly needed (mention borders, highlight effects, etc.) */
-
-/* Mention highlights (retained for visual clarity) */
-[class*="mentioned"] {
-  background-color: rgba(var(--rgb-highlight), 0.1) !important;
-  border-left: 4px solid rgb(var(--rgb-highlight)) !important;
+/* Force borders on specific elements */
+[class*="sidebar"], [class*="panel"], [class*="container"] {
+  border: 1px solid rgba(var(--rgb-highlight), 0.6) !important;
 }
 
-[class*="mentioned"]:hover {
-  background-color: rgba(var(--rgb-highlight), 0.2) !important;
+/* Activity cards and game detection */
+[class*="activityPanel"], [class*="gameWrapper"], [class*="game"] {
+  border: 1px solid rgba(var(--rgb-highlight), 0.8) !important;
+  background: rgba(20, 20, 20, 0.8) !important;
 }
 
-/* Mentions text style */
-[class*="wrapper"][class*="mention"] {
-  background-color: rgba(var(--rgb-highlight), 0.3) !important;
-  color: rgb(255, 255, 255) !important;
-  border-radius: 4px;
-  padding: 1px 4px;
+/* Server/channel list borders */
+[class*="guilds"], [class*="channels"] {
+  border-right: 2px solid rgba(var(--rgb-highlight), 0.6) !important;
 }
 
-/* Server to DM divider retained */
+/* Divider line between servers and DMs */
 [class*="listItem"]:has([data-list-item-id="guildsnav___home"]) + [class*="listItem"],
 [class*="tutorialContainer"] + [class*="listItem"],
 [class*="guildSeparator"],
@@ -53,13 +236,22 @@
   padding-top: 8px !important;
 }
 
-/* Scrollbar thumb color, rest transparent */
-::-webkit-scrollbar-thumb {
-  background: var(--highlight);
-  border-radius: 10px;
+/* Ping/mention styling with coral highlight */
+[class*="mentioned"] {
+  background-color: rgba(var(--rgb-highlight), 0.1) !important;
+  border-left: 4px solid rgb(var(--rgb-highlight)) !important;
 }
 
-::-webkit-scrollbar-track {
-  background: transparent;
+[class*="mentioned"]:hover {
+  background-color: rgba(var(--rgb-highlight), 0.2) !important;
 }
 
+/* Mention text color */
+[class*="wrapper"][class*="mention"] {
+  background-color: rgba(var(--rgb-highlight), 0.3) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+[class*="wrapper"][class*="mention"]:hover {
+  background-color: rgba(var(--rgb-highlight), 0.5) !important;
+}
