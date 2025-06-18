@@ -1,3 +1,4 @@
+/* Working Vencord theme - transparency + visible outlines */
 :root,
 .theme-dark,
 .theme-light {
@@ -223,4 +224,34 @@
 /* Server/channel list borders */
 [class*="guilds"], [class*="channels"] {
   border-right: 2px solid rgba(var(--rgb-highlight), 0.6) !important;
+}
+
+/* Divider line between servers and DMs */
+[class*="listItem"]:has([data-list-item-id="guildsnav___home"]) + [class*="listItem"],
+[class*="tutorialContainer"] + [class*="listItem"],
+[class*="guildSeparator"],
+[class*="listItem"][aria-label*="Direct Messages"] {
+  border-top: 2px solid rgb(var(--rgb-highlight)) !important;
+  margin-top: 8px !important;
+  padding-top: 8px !important;
+}
+
+/* Ping/mention styling with coral highlight */
+[class*="mentioned"] {
+  background-color: rgba(var(--rgb-highlight), 0.1) !important;
+  border-left: 4px solid rgb(var(--rgb-highlight)) !important;
+}
+
+[class*="mentioned"]:hover {
+  background-color: rgba(var(--rgb-highlight), 0.2) !important;
+}
+
+/* Mention text color */
+[class*="wrapper"][class*="mention"] {
+  background-color: rgba(var(--rgb-highlight), 0.3) !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+[class*="wrapper"][class*="mention"]:hover {
+  background-color: rgba(var(--rgb-highlight), 0.5) !important;
 }
